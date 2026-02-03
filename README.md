@@ -1,4 +1,10 @@
-# Welcome to your organization's demo respository
-This code repository (or "repo") is designed to demonstrate the best GitHub has to offer with the least amount of noise.
+# 📄📢 AI-NutriCurator
 
-The repo includes an `index.html` file (so it can render a web page), two GitHub Actions workflows, and a CSS stylesheet dependency.
+만성질환 중증도 환자들은 일상적인 커머스 환경에서도 본인의 건강 상태에 적합한 식품을 선택하는 데 정보의 비대칭성 및 상품 탐색 과정에서의 불편함을 겪고 있습니다. 
+본 AI서비스는 신뢰도 높은 출처 기반으로 구축된 DB를 바탕으로 정확도 높은 메세지 생성 및 추천 로직을 통해 이를 해소하고자 합니다.
+
+# Team BuildSparkDevelopers
+
+팀장: 소형선 이영주 박수빈
+
+# 📄📢 사용법/실행법/팀 규칙 정리
