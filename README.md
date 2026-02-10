@@ -9,16 +9,18 @@
 
 # 📄📢 사용법/실행법/팀 규칙 정리
 
-.
+#
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+#
 
-#🤖 에이전트 개요
+# 🤖 에이전트 개요
 
 
 START: 유저가 [장바구니 담기] 버튼을 클릭함
 
-##1️⃣ Node 1 (Orch-01): Eligibility Checking & Routing (Conditional Edge)
+## 1️⃣ Node 1 (Orch-01): Eligibility Checking & Routing (Conditional Edge)
 
-###1. 유저가 질병을 보유하고 있는가?
+### 1. 유저가 질병을 보유하고 있는가?
 *@USER-Agent 호출
 * IN: USER-01의 Profile Retrieval
 * Logic : PASS or WARN
@@ -29,7 +31,7 @@ START: 유저가 [장바구니 담기] 버튼을 클릭함
           ** WARN: disease >= 1   -> 2. 이동
 
 
-###2. 식품에 유관 성분이 있는가?
+### 2. 식품에 유관 성분이 있는가?
 *@CHAT-Agent 호출
 * IN: CHAT-01의 Evidence Generation
 * logic : PASS or WARN
@@ -40,10 +42,10 @@ START: 유저가 [장바구니 담기] 버튼을 클릭함
 * next: 판정결과에 따라 다른 에이전트 및 tool 호출, 상품특성 JSON 전달
 
 #
-#ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 #
 
-##2️⃣ Node 2 (User-01): Profile Retrieval
+## 2️⃣ Node 2 (User-01): Profile Retrieval
 
 유저프로필을 조회하여 건강정보 확인 및 페르소나를 JSON 출력
 * MVP: ?user_id?, weight, diabetes, hypertension, kidneydisease, allergy
@@ -104,10 +106,10 @@ Logic :
           ...
 
 #
-#ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 #
 
-##3️⃣ Node 3 (Chat-01): Evidence Generation
+## 3️⃣ Node 3 (Chat-01): Evidence Generation
 
 식품성분과 질환 가이드라인을 대조하여 근거기반 적합성 판별후 *JSON 출력*
 * IN: final_profile DB, product DB, disease RAG?
@@ -132,16 +134,16 @@ Logic :
 
 
 
-##4️⃣ Node 4 (Reco-01): Vector DB Search & Recommendation
+## 4️⃣ Node 4 (Reco-01): Vector DB Search & Recommendation
 
 * 상품특성 JSON을 받아서 유사한 상품 조회 및 추천
 
-##4️⃣ Node 4-1 (sub-Reco-01): Vector DB Search & Recommendation
+## 4️⃣ Node 4-1 (sub-Reco-01): Vector DB Search & Recommendation
 
 방식1: 레코에서 준 30-50개 정도의 상품중에서 roles.py 로 3개를 추천
 방식2: 레코에서는 3개만 주고 그 3개 상품의 조회맥락과 식품성분이 유저에게 맞는지 판단
 
-##5️⃣ Node 5 (Resp-01):
+## 5️⃣ Node 5 (Resp-01):
 
 
 
